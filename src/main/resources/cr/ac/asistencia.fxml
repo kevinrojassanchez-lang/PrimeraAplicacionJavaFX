@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="cr.ac.ejemplo.AsistenciaController"
+    spacing="15">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label
+        text="REGISTRO DE ASISTENCIA"
+        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <Label
+        fx:id="lblActividad"
+        text="Actividad seleccionada"
+        style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <TableView
+        fx:id="tablaAsistencia"
+        prefHeight="300">
+
+        <columns>
+
+            <TableColumn
+                fx:id="colIdentificacion"
+                text="Identificación"
+                prefWidth="140"/>
+
+            <TableColumn
+                fx:id="colPersona"
+                text="Persona"
+                prefWidth="220"/>
+
+            <TableColumn
+                fx:id="colTipo"
+                text="Tipo"
+                prefWidth="120"/>
+
+            <TableColumn
+                fx:id="colAsistencia"
+                text="Asistencia"
+                prefWidth="160"/>
+
+        </columns>
+
+    </TableView>
+
+    <GridPane
+        hgap="20"
+        vgap="10">
+
+        <Label
+            text="Total inscritos:"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="0"/>
+
+        <Label
+            fx:id="lblTotal"
+            text="0"
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="0"/>
+
+        <Label
+            text="Asistieron:"
+            GridPane.columnIndex="2"
+            GridPane.rowIndex="0"/>
+
+        <Label
+            fx:id="lblAsistieron"
+            text="0"
+            GridPane.columnIndex="3"
+            GridPane.rowIndex="0"/>
+
+        <Label
+            text="No asistieron:"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="1"/>
+
+        <Label
+            fx:id="lblNoAsistieron"
+            text="0"
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="1"/>
+
+        <Label
+            text="Porcentaje:"
+            GridPane.columnIndex="2"
+            GridPane.rowIndex="1"/>
+
+        <Label
+            fx:id="lblPorcentaje"
+            text="0%"
+            GridPane.columnIndex="3"
+            GridPane.rowIndex="1"/>
+
+    </GridPane>
+
+    <GridPane
+        hgap="10"
+        vgap="10">
+
+        <Button
+            text="Guardar asistencia"
+            onAction="#guardarAsistencia"
+            prefWidth="150"
+            GridPane.columnIndex="0"/>
+
+        <Button
+            text="Consultar asistencia"
+            onAction="#consultar"
+            prefWidth="150"
+            GridPane.columnIndex="1"/>
+
+        <Button
+            text="Regresar"
+            onAction="#regresar"
+            prefWidth="100"
+            GridPane.columnIndex="2"/>
+
+    </GridPane>
+
+    <Label
+        fx:id="lblEstado"
+        text=""/>
+
+</VBox>
+

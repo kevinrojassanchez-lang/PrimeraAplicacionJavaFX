@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="cr.ac.ejemplo.ConsultasController"
+    spacing="15">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label
+        text="CONSULTAS"
+        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <TabPane
+        fx:id="tabConsultas"
+        prefHeight="500">
+
+        <!-- ================= ACTIVIDADES ================= -->
+
+        <Tab
+            text="Actividades"
+            closable="false">
+
+            <VBox spacing="15">
+
+                <padding>
+                    <Insets
+                        top="15"
+                        right="15"
+                        bottom="15"
+                        left="15"/>
+                </padding>
+
+                <Label
+                    text="Consultar actividades"
+                    style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <GridPane
+                    hgap="10"
+                    vgap="10">
+
+                    <Label
+                        text="Evento:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="0"/>
+
+                    <ComboBox
+                        fx:id="cmbEventoActividad"
+                        prefWidth="200"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="0"/>
+
+                    <Label
+                        text="Fecha:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="1"/>
+
+                    <DatePicker
+                        fx:id="dpActividad"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="1"/>
+
+                    <Label
+                        text="Tipo:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="2"/>
+
+                    <ComboBox
+                        fx:id="cmbTipoActividad"
+                        prefWidth="200"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="2"/>
+
+                    <Label
+                        text="Disponibilidad:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="3"/>
+
+                    <ComboBox
+                        fx:id="cmbDisponibilidad"
+                        prefWidth="200"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="3"/>
+
+                </GridPane>
+
+                <Button
+                    text="Buscar actividades"
+                    onAction="#buscarActividades"
+                    prefWidth="160"/>
+
+                <TableView
+                    fx:id="tablaActividades"
+                    prefHeight="220">
+
+                    <columns>
+
+                        <TableColumn
+                            fx:id="colActividadId"
+                            text="ID"
+                            prefWidth="80"/>
+
+                        <TableColumn
+                            fx:id="colActividadNombre"
+                            text="Nombre"
+                            prefWidth="160"/>
+
+                        <TableColumn
+                            fx:id="colActividadTipo"
+                            text="Tipo"
+                            prefWidth="120"/>
+
+                        <TableColumn
+                            fx:id="colActividadFecha"
+                            text="Fecha"
+                            prefWidth="100"/>
+
+                        <TableColumn
+                            fx:id="colActividadEvento"
+                            text="Evento"
+                            prefWidth="140"/>
+
+                        <TableColumn
+                            fx:id="colActividadDisponibles"
+                            text="Disponibles"
+                            prefWidth="100"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+        <!-- ================= INSCRIPCIONES ================= -->
+
+        <Tab
+            text="Inscripciones"
+            closable="false">
+
+            <VBox spacing="15">
+
+                <padding>
+                    <Insets
+                        top="15"
+                        right="15"
+                        bottom="15"
+                        left="15"/>
+                </padding>
+
+                <Label
+                    text="Consultar inscripciones"
+                    style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <GridPane
+                    hgap="10"
+                    vgap="10">
+
+                    <Label
+                        text="Persona:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="0"/>
+
+                    <ComboBox
+                        fx:id="cmbPersonaInscripcion"
+                        prefWidth="200"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="0"/>
+
+                    <Label
+                        text="Tipo:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="1"/>
+
+                    <ComboBox
+                        fx:id="cmbTipoInscripcion"
+                        prefWidth="200"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="1"/>
+
+                    <Label
+                        text="Actividad:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="2"/>
+
+                    <ComboBox
+                        fx:id="cmbActividadInscripcion"
+                        prefWidth="200"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="2"/>
+
+                    <Label
+                        text="Estado:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="3"/>
+
+                    <ComboBox
+                        fx:id="cmbEstadoInscripcion"
+                        prefWidth="200"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="3"/>
+
+                </GridPane>
+
+                <Button
+                    text="Buscar inscripciones"
+                    onAction="#buscarInscripciones"
+                    prefWidth="180"/>
+
+                <TableView
+                    fx:id="tablaInscripciones"
+                    prefHeight="220">
+
+                    <columns>
+
+                        <TableColumn
+                            fx:id="colInscripcionId"
+                            text="ID inscripción"
+                            prefWidth="110"/>
+
+                        <TableColumn
+                            fx:id="colInscripcionPersona"
+                            text="Persona"
+                            prefWidth="160"/>
+
+                        <TableColumn
+                            fx:id="colInscripcionTipo"
+                            text="Tipo"
+                            prefWidth="110"/>
+
+                        <TableColumn
+                            fx:id="colInscripcionActividad"
+                            text="Actividad"
+                            prefWidth="160"/>
+
+                        <TableColumn
+                            fx:id="colInscripcionFecha"
+                            text="Fecha"
+                            prefWidth="100"/>
+
+                        <TableColumn
+                            fx:id="colInscripcionEstado"
+                            text="Estado"
+                            prefWidth="110"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+    </TabPane>
+
+    <Label
+        fx:id="lblEstado"
+        text=""/>
+
+    <Button
+        text="Regresar"
+        onAction="#regresar"
+        prefWidth="100"/>
+
+</VBox>
+

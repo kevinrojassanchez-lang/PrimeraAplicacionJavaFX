@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="cr.ac.ejemplo.ReportesController"
+    spacing="15">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label
+        text="REPORTES"
+        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <TabPane
+        fx:id="tabReportes"
+        prefHeight="520">
+
+        <!-- REPORTE 1: MAYOR PARTICIPACIÓN -->
+
+        <Tab
+            text="Mayor participación"
+            closable="false">
+
+            <VBox spacing="15">
+
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+
+                <Label
+                    text="Actividades con mayor participación"
+                    style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <Button
+                    text="Generar reporte"
+                    onAction="#reporteMayorParticipacion"
+                    prefWidth="160"/>
+
+                <TableView
+                    fx:id="tablaMayorParticipacion"
+                    prefHeight="300">
+
+                    <columns>
+
+                        <TableColumn
+                            fx:id="colMayorActividad"
+                            text="Actividad"
+                            prefWidth="200"/>
+
+                        <TableColumn
+                            fx:id="colMayorEvento"
+                            text="Evento"
+                            prefWidth="180"/>
+
+                        <TableColumn
+                            fx:id="colMayorInscritos"
+                            text="Cantidad de inscritos"
+                            prefWidth="160"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+        <!-- REPORTE 2: RESUMEN DE ASISTENCIA -->
+
+        <Tab
+            text="Resumen de asistencia"
+            closable="false">
+
+            <VBox spacing="15">
+
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+
+                <Label
+                    text="Resumen de asistencia por actividad"
+                    style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <GridPane
+                    hgap="10"
+                    vgap="10">
+
+                    <Label
+                        text="Actividad:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="0"/>
+
+                    <ComboBox
+                        fx:id="cmbActividadAsistencia"
+                        prefWidth="220"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="0"/>
+
+                </GridPane>
+
+                <Button
+                    text="Generar reporte"
+                    onAction="#reporteAsistencia"
+                    prefWidth="160"/>
+
+                <TableView
+                    fx:id="tablaAsistenciaReporte"
+                    prefHeight="230">
+
+                    <columns>
+
+                        <TableColumn
+                            fx:id="colAsistenciaActividad"
+                            text="Actividad"
+                            prefWidth="170"/>
+
+                        <TableColumn
+                            fx:id="colTotalInscritos"
+                            text="Total inscritos"
+                            prefWidth="120"/>
+
+                        <TableColumn
+                            fx:id="colAsistieron"
+                            text="Asistieron"
+                            prefWidth="100"/>
+
+                        <TableColumn
+                            fx:id="colNoAsistieron"
+                            text="No asistieron"
+                            prefWidth="120"/>
+
+                        <TableColumn
+                            fx:id="colPorcentaje"
+                            text="Porcentaje"
+                            prefWidth="110"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+        <!-- REPORTE 3: HISTORIAL DEL PARTICIPANTE -->
+
+        <Tab
+            text="Historial participante"
+            closable="false">
+
+            <VBox spacing="15">
+
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+
+                <Label
+                    text="Historial de participación"
+                    style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <GridPane
+                    hgap="10"
+                    vgap="10">
+
+                    <Label
+                        text="Participante:"
+                        GridPane.columnIndex="0"
+                        GridPane.rowIndex="0"/>
+
+                    <ComboBox
+                        fx:id="cmbParticipanteHistorial"
+                        prefWidth="220"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="0"/>
+
+                </GridPane>
+
+                <Button
+                    text="Generar reporte"
+                    onAction="#reporteHistorial"
+                    prefWidth="160"/>
+
+                <TableView
+                    fx:id="tablaHistorial"
+                    prefHeight="230">
+
+                    <columns>
+
+                        <TableColumn
+                            fx:id="colHistorialEvento"
+                            text="Evento"
+                            prefWidth="160"/>
+
+                        <TableColumn
+                            fx:id="colHistorialActividad"
+                            text="Actividad"
+                            prefWidth="170"/>
+
+                        <TableColumn
+                            fx:id="colHistorialFecha"
+                            text="Fecha"
+                            prefWidth="100"/>
+
+                        <TableColumn
+                            fx:id="colHistorialEstado"
+                            text="Estado inscripción"
+                            prefWidth="130"/>
+
+                        <TableColumn
+                            fx:id="colHistorialAsistencia"
+                            text="Asistencia"
+                            prefWidth="110"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </Tab>
+
+    </TabPane>
+
+
+    <Label
+        fx:id="lblEstado"
+        text=""/>
+
+    <Button
+        text="Regresar"
+        onAction="#regresar"
+        prefWidth="100"/>
+
+</VBox>
+

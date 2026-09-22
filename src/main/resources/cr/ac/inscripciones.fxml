@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="cr.ac.ejemplo.InscripcionesController"
+    spacing="15">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label
+        text="GESTIÓN DE INSCRIPCIONES"
+        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+
+        <Button
+            text="Inscribir participante"
+            onAction="#inscribirParticipante"
+            prefWidth="170"
+            GridPane.columnIndex="0"/>
+
+        <Button
+            text="Inscribir expositor"
+            onAction="#inscribirExpositor"
+            prefWidth="160"
+            GridPane.columnIndex="1"/>
+
+        <Button
+            text="Editar"
+            onAction="#editar"
+            prefWidth="100"
+            GridPane.columnIndex="2"/>
+
+        <Button
+            text="Cancelar inscripción"
+            onAction="#cancelarInscripcion"
+            prefWidth="160"
+            GridPane.columnIndex="3"/>
+
+        <Button
+            text="Regresar"
+            onAction="#regresar"
+            prefWidth="100"
+            GridPane.columnIndex="4"/>
+
+    </GridPane>
+
+    <GridPane hgap="10" vgap="10">
+
+        <Label
+            text="Filtrar inscripciones:"
+            GridPane.columnIndex="0"/>
+
+        <TextField
+            fx:id="txtFiltro"
+            promptText="Escriba para filtrar..."
+            prefWidth="300"
+            GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <Label
+        fx:id="lblEstado"
+        text=""/>
+
+    <TableView
+        fx:id="tablaInscripciones"
+        prefHeight="350">
+
+        <columns>
+
+            <TableColumn
+                fx:id="colId"
+                text="ID inscripción"
+                prefWidth="110"/>
+
+            <TableColumn
+                fx:id="colPersona"
+                text="Persona"
+                prefWidth="180"/>
+
+            <TableColumn
+                fx:id="colTipo"
+                text="Tipo"
+                prefWidth="120"/>
+
+            <TableColumn
+                fx:id="colActividad"
+                text="Actividad"
+                prefWidth="180"/>
+
+            <TableColumn
+                fx:id="colFecha"
+                text="Fecha"
+                prefWidth="110"/>
+
+            <TableColumn
+                fx:id="colHora"
+                text="Hora"
+                prefWidth="90"/>
+
+            <TableColumn
+                fx:id="colEstado"
+                text="Estado"
+                prefWidth="120"/>
+
+        </columns>
+
+    </TableView>
+
+</VBox>
+
