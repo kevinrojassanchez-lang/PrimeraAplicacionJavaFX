@@ -40,14 +40,7 @@
             hgap="15"
             vgap="10">
 
-            <Button
-                text="EDITAR"
-                onAction="#editar"
-                prefWidth="150"
-                prefHeight="42"
-                styleClass="boton-magenta"
-                GridPane.columnIndex="0"
-                GridPane.rowIndex="0"/>
+            
 
             <Button
                 text="REGRESAR"

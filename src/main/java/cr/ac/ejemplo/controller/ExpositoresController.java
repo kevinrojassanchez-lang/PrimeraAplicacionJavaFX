@@ -165,31 +165,6 @@ public class ExpositoresController {
     }
 
     @FXML
-    private void editar() {
-
-        Expositor expositor =
-                tablaExpositores
-                        .getSelectionModel()
-                        .getSelectedItem();
-
-        if (expositor == null) {
-
-            lblEstado.setText(
-                    "Seleccione un expositor de la tabla para editar."
-            );
-
-            return;
-        }
-
-        lblEstado.setText(
-                "Expositor seleccionado para editar: "
-                + expositor.getNombre()
-                + " "
-                + expositor.getApellidos()
-        );
-    }
-
-    @FXML
     private void regresar() {
 
         try {
