@@ -8,51 +8,85 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.EventoDetalleController"
-    spacing="15">
+    fx:controller="cr.ac.ejemplo.controller.EventoDetalleController"
+    stylesheets="@estilos.css"
+    spacing="18"
+    styleClass="pantalla-neon">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="25" right="30" bottom="25" left="30"/>
     </padding>
 
     <Label
-        text="DETALLE DEL EVENTO"
-        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        text="NEXUS / DETALLE DEL EVENTO"
+        styleClass="titulo-pantalla"/>
 
     <Label
-        fx:id="lblEvento"
-        text="Evento seleccionado"
-        style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        text="INFORMACIÓN Y GESTIÓN DEL EVENTO SELECCIONADO"
+        styleClass="subtitulo-pantalla"/>
 
-    <Label
-        text="Gestión del evento"
-        style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    <VBox
+        spacing="18"
+        styleClass="panel-neon">
 
-    <GridPane
-        hgap="10"
-        vgap="10">
+        <Label
+            text="EVENTO SELECCIONADO"
+            styleClass="seccion-neon"/>
 
-        <Button
-            text="Actividades"
-            onAction="#abrirActividades"
-            prefWidth="170"
-            prefHeight="45"
-            GridPane.columnIndex="0"
-            GridPane.rowIndex="0"/>
+        <Label
+            fx:id="lblEvento"
+            text="Evento seleccionado"
+            wrapText="true"
+            styleClass="titulo-pantalla"/>
 
-        <Button
-            text="Regresar"
-            onAction="#regresar"
-            prefWidth="170"
-            prefHeight="45"
-            GridPane.columnIndex="1"
-            GridPane.rowIndex="0"/>
+    </VBox>
 
-    </GridPane>
+    <VBox
+        spacing="15"
+        styleClass="panel-neon">
+
+        <Label
+            text="GESTIÓN DEL EVENTO"
+            styleClass="seccion-neon"/>
+
+        <Label
+            text="Selecciona una opción para continuar."
+            styleClass="subtitulo-pantalla"/>
+
+        <GridPane
+            hgap="15"
+            vgap="15">
+
+            <Button
+                text="ACTIVIDADES"
+                onAction="#abrirActividades"
+                prefWidth="200"
+                prefHeight="50"
+                styleClass="boton-cyan"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                text="REGRESAR"
+                onAction="#regresar"
+                prefWidth="200"
+                prefHeight="50"
+                styleClass="boton-salir"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
+
+        </GridPane>
+
+    </VBox>
 
     <Label
         fx:id="lblEstado"
-        text=""/>
+        text=""
+        wrapText="true"
+        styleClass="estado-pantalla"/>
+
+    <Label
+        text="NEXUS 2026 | EVENT MANAGEMENT"
+        styleClass="texto-inferior"/>
 
 </VBox>
-

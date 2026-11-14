@@ -11,72 +11,122 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.InscripcionesController"
-    spacing="15">
+    fx:controller="cr.ac.ejemplo.controller.InscripcionesController"
+    stylesheets="@estilos.css"
+    spacing="18"
+    styleClass="pantalla-neon">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
     <Label
-        text="GESTIÓN DE INSCRIPCIONES"
-        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        text="NEXUS / INSCRIPCIONES"
+        styleClass="titulo-pantalla"/>
 
-    <GridPane hgap="10" vgap="10">
+    <Label
+        text="GESTIÓN DE PARTICIPANTES Y EXPOSITORES"
+        styleClass="subtitulo-pantalla"/>
 
-        <Button
-            text="Inscribir participante"
-            onAction="#inscribirParticipante"
-            prefWidth="170"
-            GridPane.columnIndex="0"/>
-
-        <Button
-            text="Inscribir expositor"
-            onAction="#inscribirExpositor"
-            prefWidth="160"
-            GridPane.columnIndex="1"/>
-
-        <Button
-            text="Editar"
-            onAction="#editar"
-            prefWidth="100"
-            GridPane.columnIndex="2"/>
-
-        <Button
-            text="Cancelar inscripción"
-            onAction="#cancelarInscripcion"
-            prefWidth="160"
-            GridPane.columnIndex="3"/>
-
-        <Button
-            text="Regresar"
-            onAction="#regresar"
-            prefWidth="100"
-            GridPane.columnIndex="4"/>
-
-    </GridPane>
-
-    <GridPane hgap="10" vgap="10">
+    <VBox
+        spacing="12"
+        styleClass="panel-neon">
 
         <Label
-            text="Filtrar inscripciones:"
-            GridPane.columnIndex="0"/>
+            text="ACCIONES DE INSCRIPCIÓN"
+            styleClass="seccion-neon"/>
 
-        <TextField
-            fx:id="txtFiltro"
-            promptText="Escriba para filtrar..."
-            prefWidth="300"
-            GridPane.columnIndex="1"/>
+        <GridPane
+            hgap="12"
+            vgap="12">
 
-    </GridPane>
+            <Button
+                text="INSCRIBIR PARTICIPANTE"
+                onAction="#inscribirParticipante"
+                prefWidth="200"
+                prefHeight="50"
+                styleClass="boton-cyan"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                text="INSCRIBIR EXPOSITOR"
+                onAction="#inscribirExpositor"
+                prefWidth="190"
+                prefHeight="50"
+                styleClass="boton-magenta"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                fx:id="btnEditar"
+                text="EDITAR DATOS"
+                onAction="#editar"
+                prefWidth="170"
+                prefHeight="50"
+                styleClass="boton-cyan"
+                GridPane.columnIndex="2"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                fx:id="btnCancelar"
+                text="CANCELAR INSCRIPCIÓN"
+                onAction="#cambiarEstadoInscripcion"
+                prefWidth="210"
+                prefHeight="50"
+                styleClass="boton-salir"
+                GridPane.columnIndex="3"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                text="REGRESAR"
+                onAction="#regresar"
+                prefWidth="120"
+                prefHeight="45"
+                styleClass="boton-salir"
+                GridPane.columnIndex="4"
+                GridPane.rowIndex="0"/>
+
+        </GridPane>
+
+    </VBox>
+
+    <VBox
+        spacing="10"
+        styleClass="panel-neon">
+
+        <Label
+            text="BUSCAR INSCRIPCIONES"
+            styleClass="seccion-neon"/>
+
+        <GridPane hgap="12">
+
+            <Label
+                text="FILTRAR:"
+                styleClass="login-etiqueta"
+                GridPane.columnIndex="0"/>
+
+            <TextField
+                fx:id="txtFiltro"
+                promptText="Escriba para filtrar..."
+                prefWidth="350"
+                styleClass="login-campo"
+                GridPane.columnIndex="1"/>
+
+        </GridPane>
+
+    </VBox>
 
     <Label
         fx:id="lblEstado"
-        text=""/>
+        text=""
+        styleClass="estado-pantalla"
+        wrapText="true"/>
 
     <TableView
         fx:id="tablaInscripciones"
-        prefHeight="350">
+        prefHeight="400"
+        styleClass="tabla-neon">
 
         <columns>
 
@@ -119,5 +169,8 @@
 
     </TableView>
 
-</VBox>
+    <Label
+        text="NEXUS 2026 | REGISTRATION MANAGEMENT"
+        styleClass="texto-inferior"/>
 
+</VBox>

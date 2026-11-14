@@ -11,80 +11,87 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.ParticipantesController"
-    spacing="15">
+    fx:controller="cr.ac.ejemplo.controller.ParticipantesController"
+    stylesheets="@estilos.css"
+    spacing="15"
+    styleClass="pantalla-neon">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="20" right="25" bottom="20" left="25"/>
     </padding>
 
     <Label
-        text="PARTICIPANTES INSCRITOS"
-        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        text="NEXUS / PARTICIPANTES"
+        styleClass="titulo-pantalla"/>
 
-    <GridPane
-        hgap="10"
-        vgap="10">
+    <Label
+        text="GESTIÓN Y CONSULTA DE PARTICIPANTES INSCRITOS"
+        styleClass="subtitulo-pantalla"/>
 
-        <Button
-            text="Editar"
-            onAction="#editar"
-            prefWidth="100"
-            GridPane.columnIndex="0"/>
-
-        <Button
-            text="Regresar"
-            onAction="#regresar"
-            prefWidth="100"
-            GridPane.columnIndex="1"/>
-
-    </GridPane>
-
-    <GridPane
-        hgap="10"
-        vgap="10">
+    <VBox
+        spacing="12"
+        styleClass="panel-neon">
 
         <Label
-            text="Filtrar participantes:"
-            GridPane.columnIndex="0"/>
+            text="BÚSQUEDA DE PARTICIPANTES"
+            styleClass="seccion-neon"/>
 
-        <TextField
-            fx:id="txtFiltro"
-            promptText="Escriba para filtrar..."
-            prefWidth="300"
-            GridPane.columnIndex="1"/>
+        <GridPane
+            hgap="15"
+            vgap="10">
 
-    </GridPane>
+            <Label
+                text="Filtrar participantes:"
+                styleClass="login-etiqueta"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+
+            <TextField
+                fx:id="txtFiltro"
+                promptText="Escriba para filtrar..."
+                prefWidth="350"
+                styleClass="login-campo"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
+
+        </GridPane>
+
+    </VBox>
 
     <Label
         fx:id="lblEstado"
-        text=""/>
+        text=""
+        wrapText="true"
+        styleClass="estado-pantalla"/>
 
     <TableView
         fx:id="tablaParticipantes"
-        prefHeight="350">
+        prefHeight="420"
+        minHeight="250"
+        VBox.vgrow="ALWAYS"
+        styleClass="tabla-neon">
 
         <columns>
 
             <TableColumn
                 fx:id="colIdentificacion"
                 text="Identificación"
-                prefWidth="120"/>
+                prefWidth="130"/>
 
             <TableColumn
                 fx:id="colNombre"
                 text="Nombre"
-                prefWidth="120"/>
+                prefWidth="140"/>
 
             <TableColumn
                 fx:id="colApellidos"
                 text="Apellidos"
-                prefWidth="160"/>
+                prefWidth="170"/>
 
             <TableColumn
                 fx:id="colCorreo"
                 text="Correo"
-                prefWidth="180"/>
+                prefWidth="210"/>
 
             <TableColumn
                 fx:id="colTelefono"
@@ -94,16 +101,26 @@
             <TableColumn
                 fx:id="colFecha"
                 text="Fecha inscripción"
-                prefWidth="130"/>
+                prefWidth="150"/>
 
             <TableColumn
                 fx:id="colEstado"
                 text="Estado"
-                prefWidth="100"/>
+                prefWidth="110"/>
 
         </columns>
 
     </TableView>
 
-</VBox>
+    <Button
+        text="REGRESAR"
+        onAction="#regresar"
+        prefWidth="130"
+        prefHeight="42"
+        styleClass="boton-salir"/>
 
+    <Label
+        text="NEXUS 2026 | PARTICIPANT MANAGEMENT"
+        styleClass="texto-inferior"/>
+
+</VBox>

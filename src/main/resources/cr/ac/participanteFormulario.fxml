@@ -11,7 +11,7 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.ParticipanteFormularioController"
+    fx:controller="cr.ac.ejemplo.controller.ParticipanteFormularioController"
     spacing="15">
 
     <padding>

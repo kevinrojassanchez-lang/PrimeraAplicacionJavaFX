@@ -11,80 +11,121 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.ExpositoresController"
-    spacing="15">
+    fx:controller="cr.ac.ejemplo.controller.ExpositoresController"
+    stylesheets="@estilos.css"
+    spacing="15"
+    styleClass="pantalla-neon">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="20" right="25" bottom="20" left="25"/>
     </padding>
 
     <Label
-        text="EXPOSITORES INSCRITOS"
-        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        text="NEXUS / EXPOSITORES"
+        styleClass="titulo-pantalla"/>
 
-    <GridPane
-        hgap="10"
-        vgap="10">
+    <Label
+        text="GESTIÓN Y CONSULTA DE EXPOSITORES INSCRITOS"
+        styleClass="subtitulo-pantalla"/>
 
-        <Button
-            text="Editar"
-            onAction="#editar"
-            prefWidth="100"
-            GridPane.columnIndex="0"/>
-
-        <Button
-            text="Regresar"
-            onAction="#regresar"
-            prefWidth="100"
-            GridPane.columnIndex="1"/>
-
-    </GridPane>
-
-    <GridPane
-        hgap="10"
-        vgap="10">
+    <VBox
+        spacing="12"
+        styleClass="panel-neon">
 
         <Label
-            text="Filtrar expositores:"
-            GridPane.columnIndex="0"/>
+            text="ACCIONES DE EXPOSITORES"
+            styleClass="seccion-neon"/>
 
-        <TextField
-            fx:id="txtFiltro"
-            promptText="Escriba para filtrar..."
-            prefWidth="300"
-            GridPane.columnIndex="1"/>
+        <GridPane
+            hgap="15"
+            vgap="10">
 
-    </GridPane>
+            <Button
+                text="EDITAR"
+                onAction="#editar"
+                prefWidth="150"
+                prefHeight="42"
+                styleClass="boton-magenta"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                text="REGRESAR"
+                onAction="#regresar"
+                prefWidth="150"
+                prefHeight="42"
+                styleClass="boton-salir"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
+
+        </GridPane>
+
+    </VBox>
+
+    <VBox
+        spacing="12"
+        styleClass="panel-neon">
+
+        <Label
+            text="BÚSQUEDA DE EXPOSITORES"
+            styleClass="seccion-neon"/>
+
+        <GridPane
+            hgap="15"
+            vgap="10">
+
+            <Label
+                text="Filtrar expositores:"
+                styleClass="login-etiqueta"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+
+            <TextField
+                fx:id="txtFiltro"
+                promptText="Escriba para filtrar..."
+                prefWidth="350"
+                styleClass="login-campo"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
+
+        </GridPane>
+
+    </VBox>
 
     <Label
         fx:id="lblEstado"
-        text=""/>
+        text=""
+        wrapText="true"
+        styleClass="estado-pantalla"/>
 
     <TableView
         fx:id="tablaExpositores"
-        prefHeight="350">
+        prefHeight="400"
+        minHeight="250"
+        VBox.vgrow="ALWAYS"
+        styleClass="tabla-neon">
 
         <columns>
 
             <TableColumn
                 fx:id="colIdentificacion"
                 text="Identificación"
-                prefWidth="120"/>
+                prefWidth="130"/>
 
             <TableColumn
                 fx:id="colNombre"
                 text="Nombre"
-                prefWidth="120"/>
+                prefWidth="140"/>
 
             <TableColumn
                 fx:id="colApellidos"
                 text="Apellidos"
-                prefWidth="160"/>
+                prefWidth="170"/>
 
             <TableColumn
                 fx:id="colCorreo"
                 text="Correo"
-                prefWidth="180"/>
+                prefWidth="200"/>
 
             <TableColumn
                 fx:id="colTelefono"
@@ -94,15 +135,19 @@
             <TableColumn
                 fx:id="colEspecialidad"
                 text="Especialidad"
-                prefWidth="160"/>
+                prefWidth="170"/>
 
             <TableColumn
                 fx:id="colEstado"
                 text="Estado"
-                prefWidth="100"/>
+                prefWidth="110"/>
 
         </columns>
 
     </TableView>
+
+    <Label
+        text="NEXUS 2026 | SPEAKER MANAGEMENT"
+        styleClass="texto-inferior"/>
 
 </VBox>

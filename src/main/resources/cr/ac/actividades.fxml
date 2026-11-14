@@ -11,74 +11,90 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.ActividadesController"
-    spacing="15">
+    fx:controller="cr.ac.ejemplo.controller.ActividadesController"
+    stylesheets="@estilos.css"
+    spacing="18"
+    styleClass="pantalla-neon">
 
     <padding>
-        <Insets
-            top="20"
-            right="20"
-            bottom="20"
-            left="20"/>
+        <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
     <Label
-        text="GESTIÓN DE ACTIVIDADES"
-        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        text="NEXUS / ACTIVIDADES"
+        styleClass="titulo-pantalla"/>
 
-    <GridPane
-        hgap="10"
-        vgap="10">
+    <Label
+        text="GESTIÓN Y ADMINISTRACIÓN DE ACTIVIDADES"
+        styleClass="subtitulo-pantalla"/>
+
+    <GridPane hgap="12" vgap="12">
 
         <Button
-            text="Agregar"
+            fx:id="btnAgregar"
+            text="+ AGREGAR"
             onAction="#agregar"
-            prefWidth="100"
+            prefWidth="125"
+            styleClass="boton-cyan"
             GridPane.columnIndex="0"/>
 
         <Button
-            text="Editar"
+            fx:id="btnEditar"
+            text="EDITAR"
             onAction="#editar"
-            prefWidth="100"
+            prefWidth="115"
+            styleClass="boton-magenta"
             GridPane.columnIndex="1"/>
 
         <Button
-            text="Abrir actividad"
+            text="ABRIR ACTIVIDAD"
             onAction="#abrirActividad"
-            prefWidth="120"
+            prefWidth="155"
+            styleClass="boton-cyan"
             GridPane.columnIndex="2"/>
 
         <Button
-            text="Regresar"
+            text="REGRESAR"
             onAction="#regresar"
-            prefWidth="100"
+            prefWidth="115"
+            styleClass="boton-salir"
             GridPane.columnIndex="3"/>
 
     </GridPane>
 
-    <GridPane
-        hgap="10"
-        vgap="10">
+    <VBox spacing="8" styleClass="panel-neon">
 
         <Label
-            text="Filtrar actividades:"
-            GridPane.columnIndex="0"/>
+            text="BUSCAR ACTIVIDADES"
+            styleClass="seccion-neon"/>
 
-        <TextField
-            fx:id="txtFiltro"
-            promptText="Escriba para filtrar..."
-            prefWidth="300"
-            GridPane.columnIndex="1"/>
+        <GridPane hgap="12">
 
-    </GridPane>
+            <Label
+                text="FILTRAR:"
+                styleClass="login-etiqueta"
+                GridPane.columnIndex="0"/>
+
+            <TextField
+                fx:id="txtFiltro"
+                promptText="Escriba para filtrar..."
+                prefWidth="350"
+                styleClass="login-campo"
+                GridPane.columnIndex="1"/>
+
+        </GridPane>
+
+    </VBox>
 
     <Label
         fx:id="lblEstado"
-        text=""/>
+        text=""
+        styleClass="estado-pantalla"/>
 
     <TableView
         fx:id="tablaActividades"
-        prefHeight="350">
+        prefHeight="400"
+        styleClass="tabla-neon">
 
         <columns>
 
@@ -120,5 +136,9 @@
         </columns>
 
     </TableView>
+
+    <Label
+        text="NEXUS 2026 | ACTIVITY MANAGEMENT"
+        styleClass="texto-inferior"/>
 
 </VBox>

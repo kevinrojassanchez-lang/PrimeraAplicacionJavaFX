@@ -12,7 +12,7 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.ActividadFormularioController"
+    fx:controller="cr.ac.ejemplo.controller.ActividadFormularioController"
     spacing="15">
 
     <padding>
@@ -29,87 +29,77 @@
         vgap="10">
 
         <Label
-            text="Identificador:"
-            GridPane.columnIndex="0"
-            GridPane.rowIndex="0"/>
-
-        <TextField
-            fx:id="txtId"
-            GridPane.columnIndex="1"
-            GridPane.rowIndex="0"/>
-
-        <Label
             text="Nombre:"
             GridPane.columnIndex="0"
-            GridPane.rowIndex="1"/>
+            GridPane.rowIndex="0"/>
 
         <TextField
             fx:id="txtNombre"
             GridPane.columnIndex="1"
-            GridPane.rowIndex="1"/>
+            GridPane.rowIndex="0"/>
 
         <Label
             text="Descripción:"
             GridPane.columnIndex="0"
-            GridPane.rowIndex="2"/>
+            GridPane.rowIndex="1"/>
 
         <TextArea
             fx:id="txtDescripcion"
             prefRowCount="3"
             GridPane.columnIndex="1"
-            GridPane.rowIndex="2"/>
+            GridPane.rowIndex="1"/>
 
         <Label
             text="Fecha:"
             GridPane.columnIndex="0"
-            GridPane.rowIndex="3"/>
+            GridPane.rowIndex="2"/>
 
         <DatePicker
             fx:id="dpFecha"
             GridPane.columnIndex="1"
-            GridPane.rowIndex="3"/>
+            GridPane.rowIndex="2"/>
 
         <Label
             text="Hora inicio:"
             GridPane.columnIndex="0"
-            GridPane.rowIndex="4"/>
+            GridPane.rowIndex="3"/>
 
         <TextField
             fx:id="txtHoraInicio"
             promptText="HH:mm"
             GridPane.columnIndex="1"
-            GridPane.rowIndex="4"/>
+            GridPane.rowIndex="3"/>
 
         <Label
             text="Hora final:"
             GridPane.columnIndex="0"
-            GridPane.rowIndex="5"/>
+            GridPane.rowIndex="4"/>
 
         <TextField
             fx:id="txtHoraFinal"
             promptText="HH:mm"
             GridPane.columnIndex="1"
-            GridPane.rowIndex="5"/>
+            GridPane.rowIndex="4"/>
 
         <Label
             text="Lugar / Salón:"
             GridPane.columnIndex="0"
-            GridPane.rowIndex="6"/>
+            GridPane.rowIndex="5"/>
 
         <TextField
             fx:id="txtLugar"
             GridPane.columnIndex="1"
-            GridPane.rowIndex="6"/>
+            GridPane.rowIndex="5"/>
 
         <Label
             text="Capacidad máxima:"
             GridPane.columnIndex="0"
-            GridPane.rowIndex="7"/>
+            GridPane.rowIndex="6"/>
 
         <TextField
             fx:id="txtCapacidad"
             GridPane.columnIndex="1"
-            GridPane.rowIndex="7"/>
+            GridPane.rowIndex="6"/>
 
         <Label
             text="Tipo:"
@@ -158,4 +148,3 @@
         text=""/>
 
 </VBox>
-

@@ -8,70 +8,105 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.ActividadDetalleController"
-    spacing="15">
+    fx:controller="cr.ac.ejemplo.controller.ActividadDetalleController"
+    stylesheets="@estilos.css"
+    alignment="CENTER"
+    spacing="22"
+    styleClass="pantalla-neon">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="35" right="35" bottom="35" left="35"/>
     </padding>
 
     <Label
+        text="NEXUS / ACTIVIDAD"
+        styleClass="titulo-pantalla"/>
+
+    <Label
         text="DETALLE DE LA ACTIVIDAD"
-        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        styleClass="subtitulo-pantalla"/>
+
+    <VBox
+        alignment="CENTER"
+        spacing="18"
+        maxWidth="650"
+        styleClass="panel-neon">
+
+        <Label
+            text="INFORMACIÓN GENERAL"
+            styleClass="seccion-neon"/>
+
+        <Label
+            fx:id="lblEvento"
+            text="Evento: "
+            styleClass="subtitulo-pantalla"
+            wrapText="true"/>
+
+        <Label
+            fx:id="lblActividad"
+            text="Actividad: "
+            styleClass="titulo-pantalla"
+            wrapText="true"/>
+
+        <Label
+            text="PERSONAS INSCRITAS Y ASISTENCIA"
+            styleClass="seccion-neon"/>
+
+        <GridPane
+            alignment="CENTER"
+            hgap="18"
+            vgap="18">
+
+            <Button
+                fx:id="btnParticipantes"
+                text="PARTICIPANTES INSCRITOS"
+                onAction="#abrirParticipantes"
+                prefWidth="230"
+                prefHeight="65"
+                styleClass="boton-cyan"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                fx:id="btnExpositores"
+                text="EXPOSITORES INSCRITOS"
+                onAction="#abrirExpositores"
+                prefWidth="230"
+                prefHeight="65"
+                styleClass="boton-magenta"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
+
+            <Button
+                text="ASISTENCIA"
+                onAction="#abrirAsistencia"
+                prefWidth="230"
+                prefHeight="65"
+                styleClass="boton-cyan"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="1"/>
+
+            <Button
+                text="REGRESAR"
+                onAction="#regresar"
+                prefWidth="230"
+                prefHeight="65"
+                styleClass="boton-salir"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="1"/>
+
+        </GridPane>
+
+        <Label
+            fx:id="lblEstado"
+            text=""
+            styleClass="estado-pantalla"
+            wrapText="true"/>
+
+    </VBox>
 
     <Label
-        fx:id="lblEvento"
-        text="Evento: "/>
-
-    <Label
-        fx:id="lblActividad"
-        text="Actividad: "
-        style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
-
-    <Label
-        text="Personas inscritas y asistencia"
-        style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-
-    <GridPane
-        hgap="10"
-        vgap="10">
-
-        <Button
-            text="Participantes inscritos"
-            onAction="#abrirParticipantes"
-            prefWidth="190"
-            prefHeight="45"
-            GridPane.columnIndex="0"
-            GridPane.rowIndex="0"/>
-
-        <Button
-            text="Expositores inscritos"
-            onAction="#abrirExpositores"
-            prefWidth="190"
-            prefHeight="45"
-            GridPane.columnIndex="1"
-            GridPane.rowIndex="0"/>
-
-        <Button
-            text="Asistencia"
-            onAction="#abrirAsistencia"
-            prefWidth="190"
-            prefHeight="45"
-            GridPane.columnIndex="0"
-            GridPane.rowIndex="1"/>
-
-        <Button
-            text="Regresar"
-            onAction="#regresar"
-            prefWidth="190"
-            prefHeight="45"
-            GridPane.columnIndex="1"
-            GridPane.rowIndex="1"/>
-
-    </GridPane>
-
-    <Label
-        fx:id="lblEstado"
-        text=""/>
+        text="NEXUS 2026 | ACTIVITY DETAILS"
+        styleClass="texto-inferior"/>
 
 </VBox>

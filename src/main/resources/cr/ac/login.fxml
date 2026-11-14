@@ -6,47 +6,93 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
 
-<GridPane
+<VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.LoginController"
-    hgap="10"
-    vgap="10">
+    fx:controller="cr.ac.ejemplo.controller.LoginController"
+    stylesheets="@estilos.css"
+    alignment="CENTER"
+    spacing="20"
+    styleClass="login-principal">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="35" right="35" bottom="35" left="35"/>
     </padding>
 
-    <Label
-        text="Usuario:"
-        GridPane.columnIndex="0"
-        GridPane.rowIndex="0"/>
+    <VBox
+        alignment="CENTER"
+        spacing="18"
+        maxWidth="430"
+        styleClass="login-panel">
 
-    <TextField
-        fx:id="txtUsuario"
-        GridPane.columnIndex="1"
-        GridPane.rowIndex="0"/>
+        <Label
+            text="NEXUS"
+            styleClass="login-titulo"/>
 
-    <Label
-        text="Contraseña:"
-        GridPane.columnIndex="0"
-        GridPane.rowIndex="1"/>
+        <Label
+            text="EVENT MANAGEMENT SYSTEM"
+            styleClass="login-subtitulo"/>
 
-    <PasswordField
-        fx:id="txtContrasena"
-        GridPane.columnIndex="1"
-        GridPane.rowIndex="1"/>
+        <Label
+            text="INICIAR SESIÓN"
+            styleClass="login-seccion"/>
 
-    <Button
-        text="Iniciar sesión"
-        onAction="#iniciarSesion"
-        GridPane.columnIndex="1"
-        GridPane.rowIndex="2"/>
+        <GridPane
+            hgap="12"
+            vgap="18"
+            alignment="CENTER">
 
-    <Label
-        fx:id="lblEstado"
-        GridPane.columnIndex="1"
-        GridPane.rowIndex="3"/>
+            <Label
+                text="USUARIO"
+                styleClass="login-etiqueta"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
 
-</GridPane>
+            <TextField
+                fx:id="txtUsuario"
+                promptText="Ingrese su usuario"
+                prefWidth="230"
+                styleClass="login-campo"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
 
+            <Label
+                text="CONTRASEÑA"
+                styleClass="login-etiqueta"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="1"/>
+
+            <PasswordField
+                fx:id="txtContrasena"
+                promptText="Ingrese su contraseña"
+                prefWidth="230"
+                styleClass="login-campo"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="1"/>
+
+            <Button
+                text="CONECTAR"
+                prefWidth="230"
+                prefHeight="45"
+                styleClass="login-boton"
+                onAction="#iniciarSesion"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="2"/>
+
+            <Label
+                fx:id="lblEstado"
+                wrapText="true"
+                styleClass="login-estado"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="3"/>
+
+        </GridPane>
+
+        <Label
+            text="SYSTEM ONLINE | NEXUS 2026"
+            styleClass="texto-inferior"/>
+
+    </VBox>
+
+</VBox>

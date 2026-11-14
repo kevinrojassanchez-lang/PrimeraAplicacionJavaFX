@@ -9,103 +9,127 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.ConsultasController"
-    spacing="15">
+    fx:controller="cr.ac.ejemplo.controller.ConsultasController"
+    stylesheets="@estilos.css"
+    spacing="12"
+    styleClass="pantalla-neon">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="20" right="25" bottom="20" left="25"/>
     </padding>
 
     <Label
-        text="CONSULTAS"
-        style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        text="NEXUS / CONSULTAS"
+        styleClass="titulo-pantalla"/>
+
+    <Label
+        text="BÚSQUEDA Y CONSULTA DE INFORMACIÓN"
+        styleClass="subtitulo-pantalla"/>
 
     <TabPane
         fx:id="tabConsultas"
-        prefHeight="500">
+        prefHeight="650"
+        minHeight="500"
+        styleClass="tab-pane"
+        VBox.vgrow="ALWAYS">
 
-        <!-- ================= ACTIVIDADES ================= -->
+        <Tab text="ACTIVIDADES" closable="false">
 
-        <Tab
-            text="Actividades"
-            closable="false">
-
-            <VBox spacing="15">
+            <VBox
+                spacing="12"
+                styleClass="pantalla-neon"
+                fillWidth="true">
 
                 <padding>
-                    <Insets
-                        top="15"
-                        right="15"
-                        bottom="15"
-                        left="15"/>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
                 </padding>
 
                 <Label
-                    text="Consultar actividades"
-                    style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    text="CONSULTAR ACTIVIDADES"
+                    styleClass="seccion-neon"/>
 
-                <GridPane
-                    hgap="10"
-                    vgap="10">
+                <VBox spacing="10" styleClass="panel-neon">
 
-                    <Label
-                        text="Evento:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="0"/>
+                    <GridPane hgap="15" vgap="10">
 
-                    <ComboBox
-                        fx:id="cmbEventoActividad"
-                        prefWidth="200"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="0"/>
+                        <Label
+                            text="ID DEL EVENTO:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="0"/>
 
-                    <Label
-                        text="Fecha:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="1"/>
+                        <TextField
+                            fx:id="txtIdEventoActividad"
+                            promptText="Escriba el ID del evento"
+                            prefWidth="220"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="0"/>
 
-                    <DatePicker
-                        fx:id="dpActividad"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="1"/>
+                        <Label
+                            text="FECHA:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="1"/>
 
-                    <Label
-                        text="Tipo:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="2"/>
+                        <DatePicker
+                            fx:id="dpActividad"
+                            prefWidth="220"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="1"/>
 
-                    <ComboBox
-                        fx:id="cmbTipoActividad"
-                        prefWidth="200"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="2"/>
+                        <Label
+                            text="TIPO:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="2"/>
 
-                    <Label
-                        text="Disponibilidad:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="3"/>
+                        <ComboBox
+                            fx:id="cmbTipoActividad"
+                            prefWidth="220"
+                            promptText="Todos los tipos"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="2"/>
 
-                    <ComboBox
-                        fx:id="cmbDisponibilidad"
-                        prefWidth="200"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="3"/>
+                        <Label
+                            text="DISPONIBILIDAD:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="3"/>
 
-                </GridPane>
+                        <ComboBox
+                            fx:id="cmbDisponibilidad"
+                            prefWidth="220"
+                            promptText="Cualquier disponibilidad"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="3"/>
 
-                <Button
-                    text="Buscar actividades"
-                    onAction="#buscarActividades"
-                    prefWidth="160"/>
+                    </GridPane>
+
+                    <Button
+                        text="BUSCAR ACTIVIDADES"
+                        onAction="#buscarActividades"
+                        prefWidth="190"
+                        prefHeight="42"
+                        styleClass="boton-cyan"/>
+
+                </VBox>
 
                 <TableView
                     fx:id="tablaActividades"
-                    prefHeight="220">
+                    prefHeight="300"
+                    minHeight="200"
+                    VBox.vgrow="ALWAYS"
+                    styleClass="tabla-neon">
 
                     <columns>
 
@@ -147,84 +171,98 @@
 
         </Tab>
 
-        <!-- ================= INSCRIPCIONES ================= -->
+        <Tab text="INSCRIPCIONES" closable="false">
 
-        <Tab
-            text="Inscripciones"
-            closable="false">
-
-            <VBox spacing="15">
+            <VBox
+                spacing="12"
+                styleClass="pantalla-neon"
+                fillWidth="true">
 
                 <padding>
-                    <Insets
-                        top="15"
-                        right="15"
-                        bottom="15"
-                        left="15"/>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
                 </padding>
 
                 <Label
-                    text="Consultar inscripciones"
-                    style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    text="CONSULTAR INSCRIPCIONES"
+                    styleClass="seccion-neon"/>
 
-                <GridPane
-                    hgap="10"
-                    vgap="10">
+                <VBox spacing="10" styleClass="panel-neon">
 
-                    <Label
-                        text="Persona:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="0"/>
+                    <GridPane hgap="15" vgap="10">
 
-                    <ComboBox
-                        fx:id="cmbPersonaInscripcion"
-                        prefWidth="200"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="0"/>
+                        <Label
+                            text="CÉDULA:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="0"/>
 
-                    <Label
-                        text="Tipo:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="1"/>
+                        <TextField
+                            fx:id="txtCedulaInscripcion"
+                            promptText="Escriba la cédula"
+                            prefWidth="220"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="0"/>
 
-                    <ComboBox
-                        fx:id="cmbTipoInscripcion"
-                        prefWidth="200"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="1"/>
+                        <Label
+                            text="TIPO:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="1"/>
 
-                    <Label
-                        text="Actividad:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="2"/>
+                        <ComboBox
+                            fx:id="cmbTipoInscripcion"
+                            prefWidth="220"
+                            promptText="Todos los tipos"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="1"/>
 
-                    <ComboBox
-                        fx:id="cmbActividadInscripcion"
-                        prefWidth="200"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="2"/>
+                        <Label
+                            text="ID DE ACTIVIDAD:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="2"/>
 
-                    <Label
-                        text="Estado:"
-                        GridPane.columnIndex="0"
-                        GridPane.rowIndex="3"/>
+                        <TextField
+                            fx:id="txtIdActividadInscripcion"
+                            promptText="Escriba el ID de actividad"
+                            prefWidth="220"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="2"/>
 
-                    <ComboBox
-                        fx:id="cmbEstadoInscripcion"
-                        prefWidth="200"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="3"/>
+                        <Label
+                            text="ESTADO:"
+                            styleClass="login-etiqueta"
+                            GridPane.columnIndex="0"
+                            GridPane.rowIndex="3"/>
 
-                </GridPane>
+                        <ComboBox
+                            fx:id="cmbEstadoInscripcion"
+                            prefWidth="220"
+                            promptText="Todos los estados"
+                            styleClass="login-campo"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="3"/>
 
-                <Button
-                    text="Buscar inscripciones"
-                    onAction="#buscarInscripciones"
-                    prefWidth="180"/>
+                    </GridPane>
+
+                    <Button
+                        text="BUSCAR INSCRIPCIONES"
+                        onAction="#buscarInscripciones"
+                        prefWidth="210"
+                        prefHeight="42"
+                        styleClass="boton-magenta"/>
+
+                </VBox>
 
                 <TableView
                     fx:id="tablaInscripciones"
-                    prefHeight="220">
+                    prefHeight="300"
+                    minHeight="200"
+                    VBox.vgrow="ALWAYS"
+                    styleClass="tabla-neon">
 
                     <columns>
 
@@ -270,12 +308,19 @@
 
     <Label
         fx:id="lblEstado"
-        text=""/>
+        text=""
+        styleClass="estado-pantalla"
+        wrapText="true"/>
 
     <Button
-        text="Regresar"
+        text="REGRESAR"
         onAction="#regresar"
-        prefWidth="100"/>
+        prefWidth="120"
+        prefHeight="42"
+        styleClass="boton-salir"/>
+
+    <Label
+        text="NEXUS 2026 | DATA CONSULTATION"
+        styleClass="texto-inferior"/>
 
 </VBox>
-

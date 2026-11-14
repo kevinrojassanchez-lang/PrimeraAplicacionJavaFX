@@ -8,55 +8,69 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.MenuController"
+    fx:controller="cr.ac.ejemplo.controller.MenuController"
+    stylesheets="@estilos.css"
     alignment="CENTER"
-    spacing="15">
+    spacing="25"
+    styleClass="menu-principal">
 
     <padding>
-        <Insets top="30" right="30" bottom="30" left="30"/>
+        <Insets top="40" right="40" bottom="40" left="40"/>
     </padding>
 
     <Label
-        text="SISTEMA DE GESTIÓN DE EVENTOS Y PARTICIPANTES"
-        style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        text="NEXUS"
+        styleClass="titulo-neon"/>
 
     <Label
-        text="Menú principal"
-        style="-fx-font-size: 16px;"/>
+        text="SISTEMA DE GESTIÓN DE EVENTOS Y PARTICIPANTES"
+        styleClass="subtitulo-neon"/>
+
+    <Label
+        text="MENÚ PRINCIPAL"
+        styleClass="seccion-neon"/>
 
     <GridPane
-        hgap="10"
-        vgap="10"
+        hgap="20"
+        vgap="20"
         alignment="CENTER">
 
         <Button
-            text="Eventos"
-            prefWidth="150"
-            prefHeight="40"
+            fx:id="btnEventos"
+            text="EVENTOS"
+            prefWidth="190"
+            prefHeight="65"
+            styleClass="boton-cyan"
             onAction="#abrirEventos"
             GridPane.columnIndex="0"
             GridPane.rowIndex="0"/>
 
         <Button
-            text="Inscripciones"
-            prefWidth="150"
-            prefHeight="40"
+            fx:id="btnInscripciones"
+            text="INSCRIPCIONES"
+            prefWidth="190"
+            prefHeight="65"
+            styleClass="boton-magenta"
             onAction="#abrirInscripciones"
             GridPane.columnIndex="1"
             GridPane.rowIndex="0"/>
 
         <Button
-            text="Consultas"
-            prefWidth="150"
-            prefHeight="40"
+            fx:id="btnConsultas"
+            text="CONSULTAS"
+            prefWidth="190"
+            prefHeight="65"
+            styleClass="boton-magenta"
             onAction="#abrirConsultas"
             GridPane.columnIndex="0"
             GridPane.rowIndex="1"/>
 
         <Button
-            text="Reportes"
-            prefWidth="150"
-            prefHeight="40"
+            fx:id="btnReportes"
+            text="REPORTES"
+            prefWidth="190"
+            prefHeight="65"
+            styleClass="boton-cyan"
             onAction="#abrirReportes"
             GridPane.columnIndex="1"
             GridPane.rowIndex="1"/>
@@ -64,9 +78,14 @@
     </GridPane>
 
     <Button
-        text="Cerrar sesión"
-        prefWidth="150"
+        text="CERRAR SESIÓN"
+        prefWidth="190"
+        prefHeight="45"
+        styleClass="boton-salir"
         onAction="#cerrarSesion"/>
 
-</VBox>
+    <Label
+        text="SYSTEM ONLINE  |  NEXUS 2026"
+        styleClass="texto-inferior"/>
 
+</VBox>

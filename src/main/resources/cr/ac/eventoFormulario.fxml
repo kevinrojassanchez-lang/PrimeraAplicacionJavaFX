@@ -12,7 +12,7 @@
 
 <VBox
     xmlns:fx="http://javafx.com/fxml"
-    fx:controller="cr.ac.ejemplo.EventoFormularioController"
+    fx:controller="cr.ac.ejemplo.controller.EventoFormularioController"
     spacing="15">
 
     <padding>
@@ -27,16 +27,6 @@
     <GridPane
         hgap="10"
         vgap="10">
-
-        <Label
-            text="Código:"
-            GridPane.columnIndex="0"
-            GridPane.rowIndex="0"/>
-
-        <TextField
-            fx:id="txtCodigo"
-            GridPane.columnIndex="1"
-            GridPane.rowIndex="0"/>
 
         <Label
             text="Nombre:"
@@ -125,4 +115,3 @@
         text=""/>
 
 </VBox>
-
